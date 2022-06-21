@@ -6,7 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import mobi.appcent.apptern.R
+import mobi.appcent.apptern.data.model.remote.response.ProductItem
 import mobi.appcent.apptern.data.network.OnError
 import mobi.appcent.apptern.data.network.OnLoading
 import mobi.appcent.apptern.data.network.OnSuccess
@@ -62,8 +66,11 @@ class HomeFragment : BaseFragment() {
 
     private fun initRecycler() {
         binding.rvProductList.adapter = ProductListAdapter(object : OnClickInterface {
-            override fun onItemClicked(v: View?, position: Int) {
-                //TODO CLİCK ile git..
+            override fun onItemClicked(item: ProductItem) {
+                val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(
+                    item
+                )
+                findNavController().navigate(action)
             }
         })
 

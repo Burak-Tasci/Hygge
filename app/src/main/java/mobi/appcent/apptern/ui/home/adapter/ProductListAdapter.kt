@@ -36,7 +36,7 @@ class ProductListAdapter(var clickInterface: OnClickInterface) :
         fun bind(productItem: ProductItem) {
             binding.productItem = productItem
             binding.root.setOnClickListener {
-                clickInterface.onItemClicked(it, adapterPosition)
+                clickInterface.onItemClicked(productItem)
             }
         }
     }
