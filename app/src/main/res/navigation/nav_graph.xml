@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="mobi.appcent.apptern.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="mobi.appcent.apptern.ui.basket.BasketFragment"
+        android:label="BasketFragment" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="mobi.appcent.apptern.ui.productDetail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="item"
+            app:argType="mobi.appcent.apptern.data.model.remote.response.ProductItem" />
+        <action
+            android:id="@+id/action_detailFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="mobi.appcent.apptern.ui.storeAvaiable.MapsFragment"
+        android:label="MapsFragment" />
 </navigation>
