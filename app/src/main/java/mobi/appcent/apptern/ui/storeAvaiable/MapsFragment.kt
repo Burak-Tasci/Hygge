@@ -19,12 +19,16 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import mobi.appcent.apptern.R
 import mobi.appcent.apptern.data.model.remote.response.Store
 import mobi.appcent.apptern.databinding.FragmentDetailBinding
 import mobi.appcent.apptern.databinding.FragmentMapsBinding
 import mobi.appcent.apptern.ui.MainActivity
 import mobi.appcent.apptern.ui.base.BaseFragment
+import java.text.ChoiceFormat.nextDouble
+import java.util.*
+import kotlin.random.Random
 
 class MapsFragment: BaseFragment(), OnMapReadyCallback {
 
@@ -42,8 +46,7 @@ class MapsFragment: BaseFragment(), OnMapReadyCallback {
         (activity as MainActivity).isEnabledBackButton(true)
         binding = FragmentMapsBinding.inflate(layoutInflater)
         store = args.store
-        val mapFragment = (activity as MainActivity).supportFragmentManager
-            .findFragmentById(R.id.maps) as SupportMapFragment
+        val mapFragment = childFragmentManager.findFragmentById(R.id.maps) as SupportMapFragment
         mapFragment.getMapAsync(this)
         return binding.root
     }
@@ -74,6 +77,7 @@ class MapsFragment: BaseFragment(), OnMapReadyCallback {
 
 
 
+
         }
 
     }
@@ -92,5 +96,17 @@ class MapsFragment: BaseFragment(), OnMapReadyCallback {
                 }
             }
         }
+    }
+
+    private fun setMap(){
+
+        mMap.clear()
+        // when the location changes
+        store?.let {
+            val loc = LatLng(Random.nextDouble(36.0,42.0), Random.nextDouble(26.0,45.0))
+            mMap.addMarker(MarkerOptions().position(loc).title(store!!.storeName))
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15f))
+        }
+
     }
 }

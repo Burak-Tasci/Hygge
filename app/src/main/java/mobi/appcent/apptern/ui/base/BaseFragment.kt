@@ -24,14 +24,10 @@ open class BaseFragment : Fragment() {
     }
 
     fun showProgress() {
-        progressDialog?.let {
-            it.show()
-        }
+        progressDialog?.show()
     }
 
     fun hideProgress() {
-        progressDialog?.let {
-            it.hide()
-        }
+        progressDialog?.hide()
     }
 }
