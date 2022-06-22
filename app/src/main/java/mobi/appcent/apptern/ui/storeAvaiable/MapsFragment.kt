@@ -74,10 +74,7 @@ class MapsFragment: BaseFragment(), OnMapReadyCallback {
             )
         } else {
             // permission granted
-
-
-
-
+            setMap()
         }
 
     }
@@ -93,6 +90,7 @@ class MapsFragment: BaseFragment(), OnMapReadyCallback {
             if (grantResults.size > 0){
                 if (ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                     // permission granted
+                    setMap()
                 }
             }
         }
