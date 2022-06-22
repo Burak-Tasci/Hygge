@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/drawable/add_cart.xml" value="0.1385" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/drawable/product_detail_background.xml" value="0.1255" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/drawable/selected_size.xml" value="0.1385" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/drawable/strikethrough.xml" value="0.1385" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/drawable/unselected_size.xml" value="0.1385" />
         <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/activity_main.xml" value="0.21105072463768115" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/fragment_basket.xml" value="0.1" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/fragment_home.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/fragment_maps.xml" value="0.1" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/horizontal_counter.xml" value="0.536" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/Apptern 201/app/src/main/res/layout/item_product_list.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_rectangle.xml" value="0.233" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.30052083333333335" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22886403401692706" />

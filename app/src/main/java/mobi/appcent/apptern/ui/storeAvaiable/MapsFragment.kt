@@ -5,4 +5,6 @@ import mobi.appcent.apptern.ui.base.BaseFragment
 
 @AndroidEntryPoint
 class MapsFragment: BaseFragment() {
+
+
 }

@@ -11,4 +11,8 @@
     <string name="error_message">Please try again</string>
     <string name="shopping_cart">Shopping Cart</string>
     <string name="buy">Buy</string>
+    <string name="product_explanation">Ürün Açıklaması</string>
+    <string name="medium">M</string>
+    <string name="small">S</string>
+    <string name="large">L</string>
 </resources>
