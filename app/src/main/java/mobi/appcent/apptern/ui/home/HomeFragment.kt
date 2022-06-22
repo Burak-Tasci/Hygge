@@ -8,7 +8,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
-import dagger.hilt.android.AndroidEntryPoint
 import mobi.appcent.apptern.R
 import mobi.appcent.apptern.data.model.remote.response.ProductItem
 import mobi.appcent.apptern.data.network.OnError
@@ -21,7 +20,6 @@ import mobi.appcent.apptern.ui.home.adapter.ProductListAdapter
 import mobi.appcent.apptern.utils.OnClickInterface
 import mobi.appcent.apptern.utils.extension.showToast
 
-@AndroidEntryPoint
 class HomeFragment : BaseFragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel by activityViewModels<HomeViewModel>()

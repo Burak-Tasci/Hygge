@@ -49,5 +49,9 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="mobi.appcent.apptern.ui.storeAvaiable.MapsFragment"
-        android:label="MapsFragment" />
+        android:label="MapsFragment" >
+        <argument
+            android:name="store"
+            app:argType="mobi.appcent.apptern.data.model.remote.response.Store" />
+    </fragment>
 </navigation>

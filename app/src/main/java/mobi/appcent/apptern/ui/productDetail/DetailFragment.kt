@@ -5,21 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import dagger.hilt.android.AndroidEntryPoint
+import mobi.appcent.apptern.data.model.remote.response.Store
 import mobi.appcent.apptern.databinding.FragmentDetailBinding
-import mobi.appcent.apptern.databinding.FragmentHomeBinding
 import mobi.appcent.apptern.ui.MainActivity
 import mobi.appcent.apptern.ui.base.BaseFragment
-import mobi.appcent.apptern.ui.home.HomeViewModel
 
-@AndroidEntryPoint
 class DetailFragment: BaseFragment() {
 
     private lateinit var binding: FragmentDetailBinding
-    private val viewModel by activityViewModels<DetailViewModel>()
     val args: DetailFragmentArgs by navArgs()
-
+    private lateinit var store: Store
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,12 +25,19 @@ class DetailFragment: BaseFragment() {
         (activity as MainActivity).isEnabledBackButton(true)
         binding = FragmentDetailBinding.inflate(layoutInflater)
         binding.productItem = args.item
+        store = args.item.currentStore ?: Store()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHorizontalCounter()
+        binding.tvWhichStore.setOnClickListener {
+            val action = DetailFragmentDirections.actionDetailFragmentToMapsFragment(
+                store
+            )
+            findNavController().navigate(action)
+        }
     }
 
     private fun setHorizontalCounter(){
